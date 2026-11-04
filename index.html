@@ -156,7 +156,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 .scrolly .card p{margin:0 0 1em}.scrolly .card p:last-child{margin:0}
 .scrolly .card em{color:var(--gold-soft)}
 .scrolly .h3{color:#fff}
-@media (max-width:860px){.scrolly .grid{grid-template-columns:1fr}.scrolly .sticky{height:60vh;top:56px;z-index:0}.scrolly .steps{padding:0;position:relative;z-index:1}.scrolly .card{background:rgba(18,12,10,.88)}}
+@media (max-width:860px){.scrolly .grid{grid-template-columns:1fr}.scrolly .sticky{height:60vh;top:56px;z-index:0}.scrolly .steps{padding:0;position:relative;z-index:1}.scrolly .card{background:rgba(18,12,10,.96);opacity:1;transform:none}.scrolly .step{min-height:70vh}.scrolly .frame-cap{display:none}}
 
 /* ---------- survey ---------- */
 .survey{padding:120px 0;background:var(--paper)}
@@ -245,6 +245,26 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 .cursor.on{opacity:1}
 .cursor.big{width:76px;height:76px;margin:-38px 0 0 -38px;background:rgba(179,32,31,.85);border-color:transparent;color:#fff}
 @media (hover:none){.cursor{display:none}}
+
+/* ---------- Xoan video + Hương photo ---------- */
+.xoan{padding:110px 0 90px;text-align:center;background:radial-gradient(ellipse at 50% 0,rgba(179,32,31,.22),transparent 60%)}
+.xoan-lead{font:800 clamp(26px,3.6vw,46px)/1.25 var(--serif);color:#fff;margin:22px 0 18px}
+.xoan-sub{font:400 clamp(18px,1.8vw,22px)/1.6 var(--serif);color:rgba(239,230,214,.85);max-width:640px;margin:0 auto 50px}
+.xoan-sub em{color:var(--gold-soft)}
+.xoan-video{text-align:left}
+.vbox{position:relative;border-radius:10px;overflow:hidden;box-shadow:0 40px 100px -30px #000;background:#000;aspect-ratio:16/9}
+.vbox video{width:100%;height:100%;object-fit:contain}
+.vplay{position:absolute;inset:0;border:0;cursor:pointer;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;
+  background:radial-gradient(circle,rgba(0,0,0,.15),rgba(0,0,0,.55));transition:opacity .4s}
+.vplay span{width:92px;height:92px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 0 0 0 rgba(179,32,31,.6);animation:pulse 2.2s infinite}
+.vplay span svg{width:34px;height:34px;margin-left:5px}
+.vplay b{font:600 13px/1 var(--cond);letter-spacing:.25em;text-transform:uppercase}
+.vplay:hover span{transform:scale(1.08)}
+.vbox.playing .vplay{opacity:0;pointer-events:none}
+@keyframes pulse{70%{box-shadow:0 0 0 26px rgba(179,32,31,0)}100%{box-shadow:0 0 0 0 rgba(179,32,31,0)}}
+.ai-photo{margin:0 0 34px}
+.ai-photo img{border-radius:8px;box-shadow:0 30px 70px -30px #000;max-height:620px;width:100%;object-fit:cover;object-position:center 60%}
+.ai-photo figcaption{color:rgba(230,233,255,.7);border-left-color:#7fd8ff}
 
 /* ---------- credits ---------- */
 .ch-credit{position:absolute;right:clamp(16px,3vw,32px);bottom:18px;font:400 12px/1.4 var(--sans);font-style:italic;color:rgba(255,255,255,.65);z-index:2}
@@ -384,7 +404,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
       </button>
     </div>
     <div class="scroll-cue">Cuộn xuống<i></i></div>
-    <div class="hero-meta">E-Magazine · Tháng 11 · 2026<br>Video: Nhóm phóng viên thực hiện</div>
+    <div class="hero-meta">E-Magazine · Tháng 11 · 2026<br>Video: Nhóm tác giả thực hiện</div>
   </div>
 </section>
 
@@ -393,7 +413,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
   <div class="wrap">
     <p class="rv">Từ những làn điệu dân ca quen thuộc đến các bản phối hiện đại trên mạng xã hội, âm nhạc truyền thống đang có thêm nhiều cách tiếp cận đến với giới trẻ. Những giai điệu xưa được làm mới, lan tỏa rộng rãi và góp phần đưa văn hóa dân tộc đến gần hơn với thế hệ trẻ.</p>
     <p class="q rv d1">Nhưng khi những giai điệu xưa khoác lên mình diện mạo mới, đâu là ranh giới giữa sáng tạo và đánh mất giá trị nguyên bản?</p>
-    <div class="byline rv d2"><span>Thực hiện: Nhóm phóng viên</span><span>·</span><span>Đọc ~10 phút</span></div>
+    <div class="byline rv d2"><span>Thực hiện: Nhóm 8 – NMCNBCS – PTIT</span><span>·</span><span>Đọc ~10 phút</span></div>
   </div>
 </section>
 
@@ -439,7 +459,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
   <div class="wide mosaic">
     <figure class="m rv l"><img src="assets/mv2-hd.jpg" alt="Sân khấu Anh Trai Vượt Ngàn Chông Gai" loading="lazy"><span class="img-credit">Ảnh: Anh Trai Vượt Ngàn Chông Gai</span></figure>
     <figure class="m rv d1"><img src="assets/portrait1-hd.jpg" alt="Tiết mục Trống Cơm" loading="lazy"><span class="img-credit">Ảnh: Asia Entertainment, Yeah1 Music</span></figure>
-    <figure class="m rv r d2"><img src="assets/cmt1-hd.jpg" alt="Các bạn trẻ trong trang phục biểu diễn tại đêm giao lưu văn nghệ" loading="lazy"><span class="img-credit">Ảnh: Nhóm phóng viên thực hiện</span></figure>
+    <figure class="m rv r d2"><img src="assets/young-2.jpg" alt="Các nghệ sĩ biểu diễn ca trù" loading="lazy"><span class="img-credit">Ảnh: Nhóm tác giả thực hiện</span></figure>
   </div>
   <p class="pull rv">Di sản đã trở thành niềm tự hào đương đại — không chỉ trên màn hình, mà cả trong khán phòng.</p>
 </section>
@@ -453,7 +473,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
       <p class="rv">Điển hình như <em>CADAO Collective</em> tại không gian ven hồ Tây — nơi các bạn trẻ kết hợp thưởng trà, ẩm thực bản địa với việc tổ chức các đêm diễn di sản như Xẩm, Ca Trù hay Rối. Sự nhập cuộc chủ động này đã biến các di sản diễn xướng thành điểm hẹn văn hóa gần gũi.</p>
     </div>
     <div>
-      <figure class="rv r"><img src="assets/show2-hd.jpg" alt="Đêm diễn tại CADAO Collective" loading="lazy" style="border-radius:6px;box-shadow:0 40px 80px -30px #000"><figcaption>Đêm diễn tại CADAO Collective. Ảnh: Nhóm phóng viên thực hiện</figcaption></figure>
+      <figure class="rv r"><img src="assets/show2-hd.jpg" alt="Đêm diễn tại CADAO Collective" loading="lazy" style="border-radius:6px;box-shadow:0 40px 80px -30px #000"><figcaption>Đêm diễn tại CADAO Collective. Ảnh: Nhóm tác giả thực hiện</figcaption></figure>
       <figure class="rv r d1" style="margin-top:24px"><img src="assets/show1-hd.jpg" alt="Nghệ nhân biểu diễn tại CADAO Collective" loading="lazy" style="border-radius:6px"><figcaption>Ảnh: Báo Đại Đoàn Kết</figcaption></figure>
     </div>
   </div>
@@ -478,7 +498,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
       <div class="frame" id="frame">
         <img class="on" src="assets/mv2-hd.jpg" alt="" data-credit="Ảnh: Anh Trai Vượt Ngàn Chông Gai">
         <img src="assets/portrait1-hd.jpg" alt="" data-credit="Ảnh: Ghép từ video của Asia Entertainment và Yeah1 Music">
-        <img src="assets/cmt1-hd.jpg" alt="" data-credit="Ảnh: Nhóm phóng viên thực hiện">
+        <img src="assets/young-1.jpg" alt="" data-credit="Ảnh: Nhóm tác giả thực hiện">
         <img src="assets/mv1-hd.jpg" alt="" data-credit="Ảnh: Poster MV Bắc Bling – Hòa Minzy">
         <span class="chip">#TikTok</span><span class="chip">#Facebook</span><span class="chip">#YouTube</span><span class="chip">#Instagram</span>
       </div>
@@ -506,7 +526,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 </section>
 
 <section class="scrolly">
-  <figure class="collage rv z"><img src="assets/cadao-hd.jpg" alt="Bình luận của khán giả trên mạng xã hội về các đêm diễn nhạc truyền thống" loading="lazy"><figcaption>Bình luận của khán giả trên mạng xã hội. Ảnh: Nhóm phóng viên tổng hợp</figcaption></figure>
+  <figure class="collage rv z"><img src="assets/cadao-hd.jpg" alt="Bình luận của khán giả trên mạng xã hội về các đêm diễn nhạc truyền thống" loading="lazy"><figcaption>Bình luận của khán giả trên mạng xã hội. Ảnh: Nhóm tác giả tổng hợp</figcaption></figure>
 </section>
 
 <!-- ============ CHAPTER 3: SURVEY ============ -->
@@ -527,7 +547,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
       <p class="rv" style="margin-bottom:34px">Người tham gia được nghe hai đoạn nhạc dài khoảng một phút của cùng một bài dân ca. Một đoạn là bản truyền thống, đoạn kia là phiên bản phối mới trong chương trình <em>Anh trai vượt ngàn chông gai</em>. Phần lớn họ chỉ thỉnh thoảng hoặc hiếm khi nghe nhạc truyền thống.</p>
       <p class="quote-big rv d1">“Vẫn là bài Trống cơm, nhưng có phần hiện đại hơn.”</p>
       <span class="rv d2">Một bạn trẻ 18–25 tuổi</span>
-      <figure class="rv" style="max-width:360px;margin:50px auto 0;text-align:left"><img src="assets/portrait2-hd.jpg" alt="Phiếu khảo sát: bản A Trống Cơm – Như Quỳnh, bản B Trống Cơm – Nhà Sao Sáng" loading="lazy" style="border-radius:8px;box-shadow:0 20px 40px -24px rgba(80,30,10,.5)"><figcaption>Phiếu khảo sát với hai bản Trống Cơm. Ảnh: Nhóm phóng viên thực hiện</figcaption></figure>
+      <figure class="rv" style="max-width:360px;margin:50px auto 0;text-align:left"><img src="assets/portrait2-hd.jpg" alt="Phiếu khảo sát: bản A Trống Cơm – Như Quỳnh, bản B Trống Cơm – Nhà Sao Sáng" loading="lazy" style="border-radius:8px;box-shadow:0 20px 40px -24px rgba(80,30,10,.5)"><figcaption>Phiếu khảo sát với hai bản Trống Cơm. Ảnh: Nhóm tác giả thực hiện</figcaption></figure>
     </div>
 
     <div class="bento">
@@ -701,6 +721,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
         <p class="rv">Sự xuất hiện của AI đang mở ra nhiều cách thức mới để tiếp cận âm nhạc truyền thống, nhưng cũng đặt ra những lo ngại về tính nguyên bản. Một mặt, công nghệ giúp tạo ra những bản phối mới mẻ, đưa làn điệu dân ca đến gần hơn với giới trẻ. Mặt khác, việc quá phụ thuộc vào sản phẩm do AI tạo ra có thể khiến người nghe dần bỏ qua cảm xúc chân thực và chiều sâu văn hóa vốn có.</p>
         <blockquote class="rv"><span class="typed" id="typed" data-text="“AI vừa có lợi, vừa có hại. AI giúp lan tỏa âm nhạc truyền thống nhanh hơn, tạo ra những bản phối hiện đại để giới trẻ dễ tiếp cận. Tuy nhiên, AI chỉ nên là cầu nối bước đầu. Nếu muốn hiểu sâu sắc về các làn điệu dân ca, người trẻ vẫn nên tìm đến những nghệ nhân, nghệ sĩ đã dành nhiều năm gắn bó và gìn giữ loại hình nghệ thuật ấy.”"></span>
           <cite>Hương — sinh viên sư phạm âm nhạc</cite></blockquote>
+        <figure class="ai-photo rv"><img src="assets/cmt1-hd.jpg" alt="Hương cùng bạn bè trong trang phục biểu diễn tại một đêm giao lưu văn nghệ" loading="lazy"><figcaption>Hương cùng bạn bè tại một đêm giao lưu văn nghệ. Ảnh: Nhân vật cung cấp</figcaption></figure>
         <p class="rv">Là một bạn trẻ theo học ngành sư phạm âm nhạc, Hương ít nhiều nhận ra những nỗi lo, nhưng cũng không phủ nhận lợi ích của AI.</p>
         <p class="rv">Qua đó có thể thấy, công nghệ không phải rào cản của văn hóa truyền thống. Điều quan trọng là người trẻ cần biết sử dụng công nghệ như <em>một phương tiện khám phá</em>, thay vì để những sản phẩm nhân tạo thay thế hoàn toàn trải nghiệm và giá trị nghệ thuật nguyên bản.</p>
         <p class="rv">Môi trường số giúp những thanh âm cổ truyền đến với nhiều công chúng hơn. Song, việc dùng giọng AI trong sáng tạo cũng đặt ra vấn đề về quyền của nghệ nhân và nguồn gốc tác phẩm.</p>
@@ -724,14 +745,33 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 </section>
 
 <section class="ending">
-  <figure><div class="photo rv" id="endPhoto"><img src="assets/ending-hd.jpg" alt="NSND Nguyễn Thị Lịch: Lời hát vẫn còn đó, chỉ đưa nhạc vào làm lung linh lời hát đó" loading="lazy"></div><figcaption class="wrap">NSND Nguyễn Thị Lịch. Ảnh: Nhóm phóng viên thực hiện</figcaption></figure>
+  <div class="xoan">
+    <div class="wrap">
+      <span class="kicker rv">Hát Xoan · Phú Thọ</span>
+      <p class="xoan-lead rv d1">Những người đi trước vẫn đang miệt mài gìn giữ các làn điệu truyền thống.</p>
+      <p class="xoan-sub rv d2">Nhưng để những giai điệu ấy tiếp tục vang lên trong đời sống hôm nay, cần có sự tiếp nối và đón nhận từ <em>thế hệ trẻ</em>.</p>
+    </div>
+    <figure class="wide xoan-video rv z">
+      <div class="vbox">
+        <video id="xoanVideo" preload="none" playsinline poster="assets/xoan-poster.jpg">
+          <source src="assets/xoan.mp4" type="video/mp4">
+        </video>
+        <button class="vplay" id="xoanPlay" aria-label="Phát video Hát Xoan">
+          <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z"/></svg></span>
+          <b>Xem trích đoạn · 6 phút</b>
+        </button>
+      </div>
+      <figcaption>Trích đoạn Hát Xoan “Bợm gái thết trầu” – “Xin huê đố huê”. Video: Nhóm tác giả thực hiện</figcaption>
+    </figure>
+  </div>
+  <figure><div class="photo rv" id="endPhoto"><img src="assets/ending-hd.jpg" alt="NSND Nguyễn Thị Lịch: Lời hát vẫn còn đó, chỉ đưa nhạc vào làm lung linh lời hát đó" loading="lazy"></div><figcaption class="wrap">NSND Nguyễn Thị Lịch. Ảnh: Nhóm tác giả thực hiện</figcaption></figure>
   <div class="wrap prose">
     <p class="rv">Người trẻ không chỉ nghe nhạc truyền thống mà họ đang tìm cách sống cùng nó: học từng nhịp phách với nghệ nhân, rồi mang câu hát ấy vào những cách kể mới. Để ngọn lửa truyền thống cháy bền trong thời đại số, đâu là phần cần giữ nguyên và đâu là phần có thể làm mới?</p>
     <p class="rv">Từ bản phối điện tử đến lớp học nhạc cụ dân tộc, người trẻ đang tiếp cận văn hóa truyền thống bằng nhiều con đường. Hành trình đưa văn hóa truyền thống đến gần đời sống đương đại vẫn đang tiếp diễn, với sự tham gia của người trẻ, nghệ nhân và công nghệ.</p>
     <p class="rv">Câu nói <em>“lung linh lời hát”</em> của NSND Nguyễn Thị Lịch cho chúng ta thấy các bạn trẻ đã và đang làm tốt việc lan tỏa và giữ gìn bản sắc dân tộc. Hy vọng rằng các bạn sẽ tiếp cận được nhiều hơn những giá trị văn hóa truyền thống và tiếp tục hành trình lưu giữ, trao truyền các loại hình âm nhạc truyền thống Việt Nam.</p>
     <div class="credits">
-      <div><b>Nội dung</b>Nhóm thực hiện</div>
-      <div><b>Ảnh &amp; Video</b>Nhóm phóng viên thực hiện; ảnh tư liệu ghi nguồn dưới từng ảnh</div>
+      <div><b>Nội dung</b>Nhóm 8 – NMCNBCS – PTIT</div>
+      <div><b>Ảnh &amp; Video</b>Nhóm tác giả thực hiện; ảnh tư liệu ghi nguồn dưới từng ảnh</div>
       <div><b>Thiết kế</b>E-Magazine</div>
     </div>
   </div>
@@ -883,6 +923,11 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
   addEventListener('resize', onScroll);
   onScroll();
   totop.onclick = () => scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Xoan video: big play button, pause the hero while it plays
+  const xv = $('#xoanVideo'), xbox = xv.parentElement;
+  $('#xoanPlay').onclick = () => { xv.controls = true; xv.play(); };
+  xv.addEventListener('play', () => { xbox.classList.add('playing'); v.pause(); });
 
   // curtain wipe on photos (must run before the reveal observer sees them as .in)
   // a fully clipped element never intersects, so watch its parent instead
