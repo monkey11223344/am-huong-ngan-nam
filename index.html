@@ -262,6 +262,15 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 .vplay:hover span{transform:scale(1.08)}
 .vbox.playing .vplay{opacity:0;pointer-events:none}
 @keyframes pulse{70%{box-shadow:0 0 0 26px rgba(179,32,31,0)}100%{box-shadow:0 0 0 0 rgba(179,32,31,0)}}
+.cadao-video{margin-top:90px;text-align:left}
+.cadao-video .kicker{margin-bottom:22px}
+.cadao-video .kicker::before{display:none}
+.live-dot{position:absolute;left:18px;top:16px;display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:20px;background:rgba(0,0,0,.55);color:#fff;font:600 12px/1 var(--cond);letter-spacing:.15em;text-transform:uppercase;backdrop-filter:blur(6px)}
+.live-dot::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff3b30;animation:blink 1.2s steps(1) infinite}
+.vbox .sound{position:absolute;right:16px;bottom:16px}
+.vbox .sound .w{display:none}
+.vbox .sound.on .w{display:block}
+.vbox .sound.on .x{display:none}
 .ai-photo{margin:0 0 34px}
 .ai-photo img{border-radius:8px;box-shadow:0 30px 70px -30px #000;max-height:620px;width:100%;object-fit:cover;object-position:center 60%}
 .ai-photo figcaption{color:rgba(230,233,255,.7);border-left-color:#7fd8ff}
@@ -477,6 +486,19 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
       <figure class="rv r d1" style="margin-top:24px"><img src="assets/show1-hd.jpg" alt="Nghệ nhân biểu diễn tại CADAO Collective" loading="lazy" style="border-radius:6px"><figcaption>Ảnh: Báo Đại Đoàn Kết</figcaption></figure>
     </div>
   </div>
+  <figure class="wide cadao-video rv z">
+    <span class="kicker">Ghi nhận thực tế</span>
+    <div class="vbox">
+      <video id="cadaoVideo" muted loop playsinline preload="metadata" poster="assets/cadao-video-poster.jpg">
+        <source src="assets/cadao-video.mp4" type="video/mp4">
+      </video>
+      <span class="live-dot">Tại CADAO Collective</span>
+      <button class="btn-round sound" id="cadaoSound" aria-label="Bật âm thanh">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path class="x" d="m23 9-6 6m0-6 6 6"/><path class="w" d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>
+      </button>
+    </div>
+    <figcaption>Một đêm diễn ca trù tại CADAO Collective (66 Tô Ngọc Vân, Tây Hồ). Video: Nhóm tác giả thực hiện</figcaption>
+  </figure>
 </section>
 
 <!-- ============ CHAPTER 2 ============ -->
@@ -928,6 +950,18 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
   const xv = $('#xoanVideo'), xbox = xv.parentElement;
   $('#xoanPlay').onclick = () => { xv.controls = true; xv.play(); };
   xv.addEventListener('play', () => { xbox.classList.add('playing'); v.pause(); });
+
+  // CADAO clip: plays muted while on screen, sound on demand
+  const cv = $('#cadaoVideo'), cs = $('#cadaoSound');
+  new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) cv.play().catch(() => {}); else cv.pause();
+  }), { threshold: 0.4 }).observe(cv);
+  cs.onclick = () => {
+    cv.muted = !cv.muted;
+    cs.classList.toggle('on', !cv.muted);
+    if (!cv.muted) { v.pause(); xv.pause(); cv.play(); }
+  };
+  xv.addEventListener('play', () => { cv.muted = true; cs.classList.remove('on'); });
 
   // curtain wipe on photos (must run before the reveal observer sees them as .in)
   // a fully clipped element never intersects, so watch its parent instead
