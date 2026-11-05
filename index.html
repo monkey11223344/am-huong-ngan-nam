@@ -143,8 +143,8 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 .scrolly{background:var(--ink);color:#efe6d6}
 .scrolly .grid{display:grid;grid-template-columns:1fr 1fr;width:min(100% - 32px,1240px);margin:auto;gap:60px}
 .scrolly .sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center}
-.scrolly .frame{position:relative;width:100%;aspect-ratio:3/4;max-height:82vh;border-radius:8px;overflow:hidden;box-shadow:0 40px 90px -30px #000}
-.scrolly .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.08);transition:opacity 1s,transform 1.6s}
+.scrolly .frame{position:relative;height:min(78vh,760px);width:auto;max-width:100%;aspect-ratio:3/4;margin-inline:auto;border-radius:8px;overflow:hidden;box-shadow:0 40px 90px -30px #000}
+.scrolly .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 15%;opacity:0;transform:scale(1.08);transition:opacity 1s,transform 1.6s}
 .scrolly .frame img.on{opacity:1;transform:none}
 .scrolly .chip{position:absolute;z-index:2;padding:9px 16px;border-radius:30px;background:rgba(18,12,10,.75);border:1px solid rgba(214,165,71,.5);font:600 13px/1 var(--cond);letter-spacing:.12em;color:var(--gold-soft);backdrop-filter:blur(6px);animation:float 6s ease-in-out infinite}
 .chip:nth-of-type(1){top:8%;left:6%}.chip:nth-of-type(2){top:22%;right:6%;animation-delay:-2s}.chip:nth-of-type(3){bottom:20%;left:8%;animation-delay:-4s}.chip:nth-of-type(4){bottom:8%;right:10%;animation-delay:-1s}
@@ -156,7 +156,7 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 .scrolly .card p{margin:0 0 1em}.scrolly .card p:last-child{margin:0}
 .scrolly .card em{color:var(--gold-soft)}
 .scrolly .h3{color:#fff}
-@media (max-width:860px){.scrolly .grid{grid-template-columns:1fr}.scrolly .sticky{height:60vh;top:56px;z-index:0}.scrolly .steps{padding:0;position:relative;z-index:1}.scrolly .card{background:rgba(18,12,10,.96);opacity:1;transform:none}.scrolly .step{min-height:70vh}.scrolly .frame-cap{display:none}}
+@media (max-width:860px){.scrolly .grid{grid-template-columns:1fr}.scrolly .sticky{height:60vh;top:56px;z-index:0}.scrolly .steps{padding:0;position:relative;z-index:1}.scrolly .card{background:rgba(18,12,10,.96);opacity:1;transform:none}.scrolly .step{min-height:70vh}.scrolly .frame-cap{display:none}.scrolly .frame{height:calc(60vh - 24px)}}
 
 /* ---------- survey ---------- */
 .survey{padding:120px 0;background:var(--paper)}
@@ -503,8 +503,8 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 
 <!-- ============ CHAPTER 2 ============ -->
 <section class="chapter" id="c2">
-  <div class="bg" data-speed="0.25" style="background-image:url(assets/mv2-hd.jpg);background-position:center 15%"></div>
-  <span class="ch-credit">Ảnh: Anh Trai Vượt Ngàn Chông Gai</span>
+  <div class="bg" data-speed="0.25" style="background-image:url(assets/cadao-hd.jpg);background-position:center"></div>
+  <span class="ch-credit">Ảnh: Nhóm tác giả tổng hợp</span>
   <div class="inner">
     <span class="num rv z">02</span>
     <h2 class="rv d1">Mạng xã hội <em>nói gì?</em></h2>
@@ -553,8 +553,8 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 
 <!-- ============ CHAPTER 3: SURVEY ============ -->
 <section class="chapter" id="c3">
-  <div class="bg" data-speed="0.25" style="background-image:url(assets/portrait1-hd.jpg);background-position:center 30%"></div>
-  <span class="ch-credit">Ảnh: Ghép từ video của Asia Entertainment và Yeah1 Music</span>
+  <div class="bg" data-speed="0.25" style="background-image:url(assets/young-1.jpg);background-position:center 40%"></div>
+  <span class="ch-credit">Ảnh: Nhóm tác giả thực hiện</span>
   <div class="inner">
     <span class="num rv z">03</span>
     <h2 class="rv d1">Nghe lại <em>“Trống Cơm”</em></h2>
@@ -645,8 +645,8 @@ figure figcaption{font:italic 400 14px/1.5 var(--sans);color:var(--muted);margin
 
 <!-- ============ CHAPTER 4: DEBATE ============ -->
 <section class="chapter" id="c4">
-  <div class="bg" data-speed="0.25" style="background-image:url(assets/mv1-hd.jpg);background-position:center 75%"></div>
-  <span class="ch-credit">Ảnh: Poster MV Bắc Bling – Hòa Minzy</span>
+  <div class="bg" data-speed="0.25" style="background-image:url(assets/together.jpg);background-position:center 45%"></div>
+  <span class="ch-credit">Ảnh: Nhóm tác giả thực hiện</span>
   <div class="inner">
     <span class="num rv z">04</span>
     <h2 class="rv d1">Làm mới đến đâu <em>thì còn là truyền thống?</em></h2>
